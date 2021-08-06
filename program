@@ -1,0 +1,26 @@
+class Time:
+    def __init__(self,hours,minutes):
+        self.hours=hours
+        self.minutes=minutes
+    def addTime(time1,time2):
+        obj = Time(0, 0)
+        obj.minutes = time1.minutes + time2.minutes
+        if obj.minutes>60:
+            obj.hours=time1.hours+time2.hours+1
+            obj.minutes=obj.minutes-60
+        else:
+            obj.hours=time1.hours+time2.hours
+        return obj
+    def displayTime(self):
+        print("Hours: ",self.hours)
+        print("Minutes: ",self.minutes)
+
+    def DisplayMinute(self):
+        print("Total minutes: ",(self.hours*60)+self.minutes)
+
+obj1=Time(3,50)
+obj2=Time(2,30)
+obj3=Time.addTime(obj1,obj2)
+obj3.displayTime()
+obj3.DisplayMinute()
+
